@@ -36,9 +36,9 @@ Object.defineProperties(car, {
 
 car.isNew = false; // aceasta nu va modifica valoarea.
 
-Object.defineProperty(car, 'transmission', {
-    writable: true
-}) // o sa arate in consola "Cannot redefine property"
+// Object.defineProperty(car, 'transmission', {
+//     writable: true
+// }) // o sa arate in consola "Cannot redefine property"
 
 console.log(Object.values(car))
 
@@ -87,10 +87,10 @@ person2.job = "Programator";
   
 person2.name = "Radu";
 
-Object.defineProperty(person2, 'age', {
-    value: "69",
-    enumerable: false,
-});
+// Object.defineProperty(person2, 'age', {
+//     value: "69",
+//     enumerable: false,
+// });
 
 console.log(person2);
 
@@ -146,9 +146,5 @@ const cloneObject = JSON.parse(objectJSON)
 console.log("Clona obiectului:", cloneObject)
 
 // task11
-function cloneObjectFunc(obj) {
-    return { ...obj }
-}
-
-const clonedObjectByFunc = cloneObjectFunc(person)
-console.log(clonedObjectByFunc)
+const clonedObjectByFunc = Object.assign(person)
+console.log("Clona obiectului:", clonedObjectByFunc)
